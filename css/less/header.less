@@ -17,9 +17,6 @@
 
 @grayBase:              #000;
 @grayLight:             lighten(@grayBase, 46.7%); // #777
-// $gray-lighter:           lighten($gray-base, 93.5%) // #eee
-
-// $brand-primary:         darken(#428bca, 6.5%) // #337ab7
 @brandPrimary:			   rgba(136, 162, 169, 1); // #88A2A9
 @brandSecondary:		   rgba(111, 105, 91, 1); // #6F695B
 @brandDark:			       rgba(68, 81, 85, 1); // #445155
@@ -28,11 +25,12 @@
 @menuBarBgColor: @brandSecondary;
 @topBarButtonBgColor: #fff;
 @topBarButtonColor: #333;
+@topBarButtonPadding: 5px 29px 6px 17px;
 @topBarButtonHoverBgColor: lighten(@brandSecondary, 45%);
 @menuShadow: 0 2px 2px rgba(25, 25, 25, .25);
 @menuBarButtonHoverBgColor: darken(@brandSecondary, 10%);
 @buttonMargin: 11px;
-@menuFontSize: 16px;
+@menuFontSize: @baseFontSize;
 
 #top-bar {
   padding: 10px;
@@ -106,7 +104,7 @@ header #logo {
 a.top-dropdown:link,
 a.top-dropdown:visited,
 a.top-dropdown:active {
-  padding: 5px 29px 6px 17px;
+  padding: @topBarButtonPadding;
   background-image: url(../../images/gray-arrow.png);
   background-position: right center;
   background-repeat: no-repeat;
@@ -222,9 +220,12 @@ nav > div {
     font-size: @menuFontSize !important;
     color: @topBarButtonColor !important;
     border: 1px solid transparent !important;
+    background-image: none !important;
+    padding-right: 17px;
     &:hover {
       background-color: @topBarButtonHoverBgColor !important;
       border: 1px solid #adadad !important;
+      background-image: none !important;
     }
   }
   form {
@@ -276,7 +277,7 @@ nav > div {
 
   // Icons
   > a:before {
-    font-family: 'FontAwesome';
+    font-family: 'FontAwesome', sans-serif;
     font-weight: normal;
     font-style: normal;
     text-align: center;
@@ -373,7 +374,6 @@ nav > div {
     width: 100%;
     min-height: 0;
     margin-bottom: 0;
-    // .box-sizing(content-box);
 
     // Define height (box-model is content-box here)
     padding: 0 8px;
@@ -383,7 +383,6 @@ nav > div {
       background-color: @graySilver;
       .placeholder(@grayLight);
     }
-
   }
 
   button {
@@ -401,7 +400,7 @@ nav > div {
     .border-radius(0 4px 4px 0);
 
     &:before {
-      font-family: FontAwesome;
+      font-family: FontAwesome, sans-serif;
       content:"\f002";
     }
   }
@@ -494,7 +493,6 @@ nav > div {
       }
     }
   }
-
 }
 
 @media (max-width: 480px) {
@@ -504,13 +502,6 @@ nav > div {
     top: 10px;
     right: 10px;
   }
-
-  //#browse-menu {
-  //  width: 3%;
-  //  &> a {
-  //    text-indent: -9999px;
-  //  }
-  //}
 
   nav {
     clear: both;
@@ -531,5 +522,4 @@ nav > div {
       left: 0; right: 0;
     }
   }
-
 }

@@ -51,15 +51,22 @@
 @import "less/jobs.less";
 
 // Override section.actions color
-section.actions {
-  background-color: lighten(@brandSecondary, 50%);
-  .c-btn {
-    border: 1px solid transparent;
-    background-color: @topBarButtonBgColor;
-    color: @topBarButtonColor;
-    &:hover {
-      background-color: @topBarButtonHoverBgColor;
-      border-color: #adadad;
+#content, #main-column {
+  section.actions {
+    background-color: lighten(@brandSecondary, 50%);
+    ul {
+      list-style: none;
+      margin-left: 0;
+      margin-bottom: 0;
+    }
+    .c-btn {
+      border: 1px solid transparent;
+      background-color: @topBarButtonBgColor;
+      color: @topBarButtonColor;
+      &:hover {
+        background-color: @topBarButtonHoverBgColor;
+        border-color: #adadad;
+      }
     }
   }
 }
