@@ -213,19 +213,21 @@ nav > div {
   > a {
     margin-left: 12px;
 
-    // NB: Hack alert. The Dariah Shibboleth plugin adds
-    // some overrides to the stock AtoM theme to style the
-    // login button. All the !importants here over-override
-    // those changes. :-|
-    font-size: @menuFontSize !important;
-    color: @topBarButtonColor !important;
-    border: 1px solid transparent !important;
-    background-image: none !important;
-    padding-right: 17px;
-    &:hover {
-      background-color: @topBarButtonHoverBgColor !important;
-      border: 1px solid #adadad !important;
+    &.top-loginlink {
+      // NB: Hack alert. The Dariah Shibboleth plugin adds
+      // some overrides to the stock AtoM theme to style the
+      // login button. All the !importants here over-override
+      // those changes. :-|
+      font-size: @menuFontSize !important;
+      color: @topBarButtonColor !important;
+      border: 1px solid transparent !important;
       background-image: none !important;
+      padding-right: 17px;
+      &:hover {
+        background-color: @topBarButtonHoverBgColor !important;
+        border: 1px solid #adadad !important;
+        background-image: none !important;
+      }
     }
   }
   form {
